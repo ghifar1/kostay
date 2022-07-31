@@ -1,11 +1,14 @@
-import { ActionIcon, Box, Card, Grid, Group, Image, ScrollArea, Select, Stack, Text, TextInput } from "@mantine/core"
+import { ActionIcon, Box, Button, Card, Chip, Divider, Drawer, Grid, Group, Image, ScrollArea, Select, Stack, Text, TextInput } from "@mantine/core"
 import logo from "../../images/logo.png"
 import windah from "../../images/windah.jpg"
 import kamar from "../../images/kamar.png"
-import { MessageDots, Door, Cpu, Search, Man, Star, MapPin } from "tabler-icons-react"
+import { MessageDots, Door, Cpu, Search, Man, Star, MapPin, AdjustmentsHorizontal } from "tabler-icons-react"
 import { useNavigate } from "react-router-dom"
+import { useState } from "react"
 
 const Header = () => {
+    const navigate = useNavigate()
+
     return (
         <Box sx={{ backgroundColor: '#FEF6E3', borderBottomLeftRadius: 30, borderBottomRightRadius: 30 }} p={20}>
             <Stack sx={{ width: '100%' }}>
@@ -27,7 +30,7 @@ const Header = () => {
                             </Group>
                         </Stack>
                     </Group>
-                    <ActionIcon sx={(theme) => ({ backgroundColor: theme.colors.cyan[9] })} variant="filled" size={"lg"} radius={"xl"} p={3}><Door size={50} /></ActionIcon>
+                    <ActionIcon onClick={() => navigate('/u/mykost')} sx={(theme) => ({ backgroundColor: theme.colors.cyan[9] })} variant="filled" size={"lg"} radius={"xl"} p={3}><Door size={50} /></ActionIcon>
                 </Group>
             </Stack>
         </Box>
@@ -103,9 +106,40 @@ const GridKos = () => {
     )
 }
 
-const Home = () => {
+const FilterDrawer = ({ open, setOpen }) => {
     return (
-        <div>
+        <Drawer
+            opened={open}
+            onClose={() => setOpen(false)}
+            padding="sm"
+            size={"sm"}
+            position="bottom"
+            styles={(theme) => ({
+                drawer: {
+                    backgroundColor: "#FEF6E3"
+                }
+            })}
+        >
+            <Chip.Group position="left" multiple>
+                <Chip value="1">Putra</Chip>
+                <Chip value="2">Putri</Chip>
+            </Chip.Group>
+            <Divider size={"sm"} my={10} />
+            <Chip.Group position="left" multiple>
+                <Chip value="1">K. Mandi Dalam</Chip>
+                <Chip value="3">AC</Chip>
+                <Chip value="4">Wifi</Chip>
+                <Chip value="5">Kasur</Chip>
+            </Chip.Group>
+        </Drawer>
+    )
+}
+
+const Home = () => {
+    const [filterDrawer, setFilterDrawer] = useState(false)
+
+    return (
+        <div style={{ position: 'relative' }}>
             <ScrollArea style={{ height: '100vh' }} type="scroll" scrollbarSize={8}>
                 <Box sx={(theme) => ({ backgroundColor: theme.colors.cyan[9] })}>
                     <Header />
@@ -113,7 +147,12 @@ const Home = () => {
                 </Box>
                 <GridKos />
             </ScrollArea>
-
+            <Box style={{ position: 'absolute', bottom: '5%' }}>
+                <Box mx={20}>
+                    <Button onClick={() => setFilterDrawer(true)} sx={(theme) => ({ backgroundColor: theme.colors.cyan[9] })} size="xs" leftIcon={<AdjustmentsHorizontal />} radius={"xl"} >Filter</Button>
+                </Box>
+            </Box>
+            <FilterDrawer open={filterDrawer} setOpen={setFilterDrawer} />
         </div>
     )
 }

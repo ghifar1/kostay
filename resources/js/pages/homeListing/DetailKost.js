@@ -1,12 +1,16 @@
 import { Carousel } from "@mantine/carousel"
-import { ActionIcon, Box, Button, Divider, Drawer, Group, Image, ScrollArea, Stack, Tabs, Text } from "@mantine/core"
+import { ActionIcon, Box, Button, Center, Divider, Drawer, Grid, Group, Image, ScrollArea, SegmentedControl, Select, Stack, Tabs, Text, TextInput } from "@mantine/core"
 import { useNavigate } from "react-router-dom"
-import { ChevronLeft, MapPin, Man, Star, Message } from "tabler-icons-react"
+import { ChevronLeft, MapPin, Man, Star, Message, Minus, Plus } from "tabler-icons-react"
 import { Rating } from 'react-simple-star-rating'
 import kamar from "../../images/kamar.png"
 import { useState } from "react"
+import { DatePicker } from "@mantine/dates"
+import dayjs from "dayjs"
 
 const SewaDrawer = ({ open, setOpen }) => {
+    const navigate = useNavigate()
+
     return (
         <Drawer
             position="bottom"
@@ -21,14 +25,80 @@ const SewaDrawer = ({ open, setOpen }) => {
             })}
         >
             <Text sx={(theme) => ({ color: theme.colors.cyan[0] })} align="center" size={"xl"} weight={"600"}>Sewa</Text>
-            <Box mt={20} sx={(theme) => ({ backgroundColor: theme.colors.cyan[0], borderTopLeftRadius: 50, borderTopRightRadius: 50 })}>
+            <Box mt={20} sx={(theme) => ({ backgroundColor: theme.colors.cyan[0], borderTopLeftRadius: 50, borderTopRightRadius: 50, height: '100%' })}>
                 <Text size={"xl"} weight={"500"} py={10} sx={(theme) => ({ color: theme.colors.cyan[9] })} align="center">Pembayaran</Text>
                 <Divider />
-                <Stack align={"center"} justify={"center"} my={10} >
+                <Stack sx={(theme) => ({ color: theme.colors.cyan[9] })} align={"center"} justify={"center"} my={10} >
                     <Image src={kamar} radius={"lg"} width={170} />
+                    <Stack spacing={1} align={"center"}>
+                        <Text size={"xl"} weight={"500"} >Kost Mang Udin</Text>
+                        <Group spacing={2}>
+                            <MapPin color="#0B7285" />
+                            <Text sx={(theme) => ({ color: theme.colors.cyan[9] })} weight={"400"} >Mampang</Text>
+                        </Group>
+                    </Stack>
                 </Stack>
-                <Text>wuwuwu</Text>
+                <Box mx={20}>
+                    <Grid>
+                        <Grid.Col span={6}>
+                            <DatePicker label="Mulai sewa" minDate={dayjs(new Date()).toDate()} radius={"xl"} />
+                        </Grid.Col>
+                        <Grid.Col span={6}>
+                            <Stack spacing={2} sx={{ width: '100%', height: '100%' }} justify={"center"} align={"center"}>
+                                <Text weight={"500"} size={"sm"}>Masa Sewa</Text>
+                                <Group>
+                                    <ActionIcon><Minus /></ActionIcon>
+                                    <Text>1</Text>
+                                    <ActionIcon><Plus /></ActionIcon>
+                                </Group>
+                            </Stack>
+                        </Grid.Col>
+                        <Grid.Col span={6}>
+                            <Select
+                                label="Siklus pembayaran"
+                                placeholder="bulanan"
+                                data={[
+                                    { value: '1', label: '1 bulan' },
+                                    { value: '3', label: '3 bulan' },
+                                    { value: '6', label: '6 bulan' },
+                                    { value: '12', label: '12 bulan' },
+                                ]}
+                            />
+                        </Grid.Col>
+                        <Grid.Col span={6}>
+                            <Stack spacing={2} align={"center"} justify={"center"}>
+                                <Text weight={"500"} size={"sm"}>Pembayaran</Text>
+                                <SegmentedControl
+                                    radius={"lg"}
+                                    color={"cyan"}
+                                    data={[
+                                        { value: 'tunai', label: 'Tunai' },
+                                        { value: 'paylater', label: 'Paylater' },
+                                    ]}
+                                />
+                            </Stack>
+                        </Grid.Col>
+                        <Grid.Col span={12}>
+                            <Group position="apart">
+                                <Text weight={"500"}>Total</Text>
+                                <Text sx={(theme) => ({ color: theme.colors.cyan[9] })} size={"xl"} weight={"600"} >Rp. 1,500,000</Text>
+                            </Group>
+                        </Grid.Col>
+                    </Grid>
+                    <Divider size={"md"} my={15} />
+                    <Stack sx={(theme) => ({ color: theme.colors.cyan[9] })} spacing={2}>
+                        <Text size={"sm"}>Saldo Anda</Text>
+                        <Group>
+                            <Image src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Logo_ovo_purple.svg/2560px-Logo_ovo_purple.svg.png" width={30} />
+                            <Text sx={(theme) => ({ color: theme.colors.cyan[9] })} size={"xl"} weight={"600"} >Rp. 1,500,000</Text>
+                        </Group>
+                    </Stack>
+                    <Button fullWidth size="lg" radius={"xl"} my={20} sx={(theme) => ({ backgroundColor: theme.colors.cyan[9] })}
+                        onClick={() => navigate('/u/transaction/success')}
+                    >Bayar</Button>
+                </Box>
             </Box>
+
         </Drawer>
     )
 }
@@ -132,7 +202,9 @@ const DetailKost = () => {
                     </Stack>
                     <Group position="apart" my={"md"}>
                         <Text>Diupdate 20 hari yang lalu</Text>
-                        <Message size={"35"} />
+                        <ActionIcon sx={(theme) => ({ color: theme.colors.cyan[9], })} size={"xl"}
+                            onClick={() => navigate('/u/chat')}
+                        ><Message size={"35"} /></ActionIcon>
                     </Group>
 
                 </Box>

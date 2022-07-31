@@ -1,7 +1,4 @@
-const InterpolateSWPlugin = require('interpolate-sw-plugin');
 const mix = require('laravel-mix');
-
-const test = new InterpolateSWPlugin()
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
