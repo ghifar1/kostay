@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="api_url" content="{{url('api')}}">
+    <meta name="base_url" content="{{url('')}}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +21,7 @@
         }
 
         @media only screen and (max-width: 600px) {
-            #app {
+            #app, .inner-app {
                 width: 100%;
                 background-color: white;
                 height: 100vh;
@@ -27,7 +29,7 @@
             }
         }
 
-        #app {
+        #app, .inner-app {
             width: 480px;
             background-color: white;
             height: 100vh;

@@ -16,7 +16,7 @@ const AuthRouter = () => {
         <Routes>
             <Route element={<AnimationLayout />}>
                 <Route path="/home" element={<Home />} />
-                <Route path="/det/" element={<DetailKost />} />
+                <Route path="/det/:id" element={<DetailKost />} />
                 <Route path="/transaction/success" element={<TransaksiBerhasil />} />
                 <Route path="/chat" element={<ChatKost />} />
                 <Route path="/mykost" element={<KostSaya />} />

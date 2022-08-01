@@ -56,7 +56,7 @@ const KostSaya = () => {
                 </ActionIcon>
             </div>
             <Box sx={(theme) => ({
-                position: 'absolute', bottom: 0, height: '10%', width: '100%',
+                position: 'absolute', bottom: 0, height: '13%', width: '100%',
                 backgroundColor: theme.white,
                 borderTopLeftRadius: 40,
                 borderTopRightRadius: 40,

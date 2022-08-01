@@ -1,13 +1,17 @@
-import { ActionIcon, Box, Button, Card, Chip, Divider, Drawer, Grid, Group, Image, ScrollArea, Select, Stack, Text, TextInput } from "@mantine/core"
+import { ActionIcon, Box, Button, Card, Center, Chip, Divider, Drawer, Grid, Group, Image, Loader, ScrollArea, Select, Stack, Text, TextInput } from "@mantine/core"
 import logo from "../../images/logo.png"
 import windah from "../../images/windah.jpg"
 import kamar from "../../images/kamar.png"
-import { MessageDots, Door, Cpu, Search, Man, Star, MapPin, AdjustmentsHorizontal } from "tabler-icons-react"
+import { MessageDots, Door, Cpu, Search, Man, Star, MapPin, AdjustmentsHorizontal, Woman, GenderBigender } from "tabler-icons-react"
 import { useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import axios from "axios"
+import { api_url, base_url } from "../../static/api_url"
+import Profile from "../user/Profile"
 
 const Header = () => {
     const navigate = useNavigate()
+    const [profileOpen, setProfileOpen] = useState(false)
 
     return (
         <Box sx={{ backgroundColor: '#FEF6E3', borderBottomLeftRadius: 30, borderBottomRightRadius: 30 }} p={20}>
@@ -15,13 +19,13 @@ const Header = () => {
                 <Group position="apart">
                     <Image src={logo} width={70} m={0} p={0} />
                     <Group>
-                        <ActionIcon sx={(theme) => ({ backgroundColor: theme.colors.cyan[9] })} variant="filled" radius={"xl"}><Cpu size={50} /></ActionIcon>
+                        <ActionIcon onClick={() => navigate('/u/mykost/control')} sx={(theme) => ({ backgroundColor: theme.colors.cyan[9] })} variant="filled" radius={"xl"}><Cpu size={50} /></ActionIcon>
                         <ActionIcon sx={(theme) => ({ color: theme.colors.cyan[9] })} size={"lg"}><MessageDots size={50} /></ActionIcon>
                     </Group>
                 </Group>
                 <Group position="apart">
                     <Group>
-                        <Image src={windah} width={50} radius={"xl"} />
+                        <Image src={windah} width={50} radius={"xl"} onClick={() => setProfileOpen(true)} />
                         <Stack spacing={2}>
                             <Text sx={(theme) => ({ color: theme.colors.cyan[9] })} weight={"600"} size={"lg"}>Bocil Kematian</Text>
                             <Group spacing={7}>
@@ -33,6 +37,7 @@ const Header = () => {
                     <ActionIcon onClick={() => navigate('/u/mykost')} sx={(theme) => ({ backgroundColor: theme.colors.cyan[9] })} variant="filled" size={"lg"} radius={"xl"} p={3}><Door size={50} /></ActionIcon>
                 </Group>
             </Stack>
+            <Profile open={profileOpen} setOpen={setProfileOpen} />
         </Box>
     )
 }
@@ -55,54 +60,92 @@ const Searchable = () => {
     )
 }
 
-const CardKos = () => {
+const CardKos = ({ id, name, location, facilities, gender, price, price_display, photos, feedback }) => {
     const navigate = useNavigate()
+    const facility = facilities.split(",")
+    const [starSum, setStarSum] = useState(0)
+    const [starCount, setStarCount] = useState(0)
+
+    useEffect(() => {
+        let star_sum = 0;
+        let star_count = 0;
+        feedback?.forEach((data) => {
+            star_count++;
+            star_sum += data?.stars
+        })
+
+        setStarSum(star_sum)
+        setStarCount(star_count)
+    }, [])
+
+    let formatter = new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+
+        // These options are needed to round to whole numbers if that's what you want.
+        minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+        maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+    });
+
     return (
-        <Box onClick={() => navigate('/u/det')}>
+        <Box onClick={() => navigate('/u/det/' + id)}>
             <Card sx={(theme) => ({ backgroundColor: theme.colors.gray[4] })} shadow="sm" p="sm" radius="md">
                 <Card.Section>
-                    <Image src={kamar} />
+                    <Image src={`${base_url}/images/${photos[0]?.image_name}`} />
                 </Card.Section>
                 <Group position={"apart"} mt={5}>
-                    <Man color="#0B7285" />
+                    {gender == "man" && <Man color="#0B7285" />}
+                    {gender == "woman" && <Woman color="#0B7285" />}
+                    {gender == "unisex" && <GenderBigender color="#0B7285" />}
                     <Group align={"center"} spacing={1}>
                         <Star color="#0B7285" size={18} />
-                        <Text>4.7</Text>
+                        <Text>{(starSum / starCount).toFixed(1)}</Text>
                     </Group>
                 </Group>
             </Card>
             <Stack my={2} spacing={2}>
-                <Text sx={(theme) => ({ color: theme.colors.cyan[9] })} weight={"500"} >Kost Mang Windah</Text>
+                <Text sx={(theme) => ({ color: theme.colors.cyan[9] })} weight={"500"} >{name}</Text>
                 <Group spacing={2}>
                     <MapPin color="#0B7285" />
-                    <Text sx={(theme) => ({ color: theme.colors.cyan[9] })} >Mampang</Text>
+                    <Text sx={(theme) => ({ color: theme.colors.cyan[9] })} >{location}</Text>
                 </Group>
-                <Text size={"sm"} color="dimmed">Wifi - AC - Kasur - Meja</Text>
-                <Text sx={(theme) => ({ color: theme.colors.cyan[9] })} weight={"500"}>Rp 1,500,000/bulan</Text>
+                <Text size={"sm"} color="dimmed">{facility.map((teks, idx) => (
+                    `${teks} ${idx != (facility.length - 1) ? " - " : ""}`
+                ))}</Text>
+                <Text sx={(theme) => ({ color: theme.colors.cyan[9] })} weight={"500"}>{formatter.format(price)}/{price_display}</Text>
             </Stack>
         </Box>
     )
 }
 
-const GridKos = () => {
+const GridKos = ({ data }) => {
     return (
-        <Grid m={20}>
-            <Grid.Col span={6}>
-                <CardKos />
-            </Grid.Col>
-            <Grid.Col span={6}>
-                <CardKos />
-            </Grid.Col>
-            <Grid.Col span={6}>
-                <CardKos />
-            </Grid.Col>
-            <Grid.Col span={6}>
-                <CardKos />
-            </Grid.Col>
-            <Grid.Col span={6}>
-                <CardKos />
-            </Grid.Col>
-        </Grid>
+        <>
+            {data?.length == 0 && (
+                <Center sx={{ height: '50vh', width: '100%' }}>
+                    <Loader />
+                </Center>
+            )}
+            {data?.length > 0 && (
+                <Grid m={20}>
+                    {data?.map((kos, key) => (
+                        <Grid.Col key={key} span={6}>
+                            <CardKos
+                                id={kos?.id}
+                                name={kos?.name}
+                                location={kos?.position}
+                                facilities={kos?.facilities}
+                                photos={kos?.photos}
+                                gender={kos?.gender}
+                                price={kos?.price}
+                                price_display={kos?.price_display}
+                                feedback={kos?.feedback}
+                            />
+                        </Grid.Col>
+                    ))}
+                </Grid>
+            )}
+        </>
     )
 }
 
@@ -137,6 +180,17 @@ const FilterDrawer = ({ open, setOpen }) => {
 
 const Home = () => {
     const [filterDrawer, setFilterDrawer] = useState(false)
+    const [kost, setKost] = useState([])
+
+    useEffect(() => {
+        axios.get(api_url + "/kost")
+            .then((res) => {
+                console.log(res.data)
+                setKost(res.data)
+            }).catch((err) => {
+                console.log(err.response)
+            })
+    }, [])
 
     return (
         <div style={{ position: 'relative' }}>
@@ -145,7 +199,7 @@ const Home = () => {
                     <Header />
                     <Searchable />
                 </Box>
-                <GridKos />
+                <GridKos data={kost} />
             </ScrollArea>
             <Box style={{ position: 'absolute', bottom: '5%' }}>
                 <Box mx={20}>
