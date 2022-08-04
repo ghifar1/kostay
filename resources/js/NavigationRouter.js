@@ -8,6 +8,8 @@ import TransaksiBerhasil from "./pages/transaction/TransaksiBerhasil";
 import ChatKost from "./pages/homeListing/ChatKost";
 import KostSaya from "./pages/listKost/KostSaya";
 import KontrolKost from "./pages/listKost/KontrolKost";
+import LogoScreen from "./pages/welcomeScreen/LogoScreen";
+import AboutScreen from "./pages/welcomeScreen/AboutScreen";
 
 const PageLayout = ({ children }) => children;
 
@@ -69,6 +71,8 @@ const AnimationLayout = () => {
 const NavigationRouter = () => {
     return (
         <Routes>
+            <Route path="/" element={<LogoScreen />} />
+            <Route path="/about" element={<AboutScreen />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/u/*" element={<AuthRouter />} />

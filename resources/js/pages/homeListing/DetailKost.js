@@ -1,5 +1,5 @@
 import { Carousel } from "@mantine/carousel"
-import { ActionIcon, Box, Button, Center, Divider, Drawer, Grid, Group, Image, ScrollArea, SegmentedControl, Select, Skeleton, Stack, Tabs, Text, TextInput } from "@mantine/core"
+import { ActionIcon, Box, Button, Card, Center, Divider, Drawer, Grid, Group, Image, Radio, ScrollArea, SegmentedControl, Select, Skeleton, Stack, Tabs, Text, TextInput } from "@mantine/core"
 import { useNavigate, useParams } from "react-router-dom"
 import { ChevronLeft, MapPin, Man, Star, Message, Minus, Plus, Woman, GenderBigender, ChevronRight } from "tabler-icons-react"
 import { Rating } from 'react-simple-star-rating'
@@ -10,8 +10,68 @@ import dayjs from "dayjs"
 import axios from "axios"
 import { api_url, base_url } from "../../static/api_url"
 
+const PembayaranDrawer = ({ open, setOpen }) => {
+    return (
+        <Drawer
+            position="bottom"
+            opened={open}
+            withCloseButton={false}
+            onClose={() => setOpen(false)}
+            size="full"
+            padding={"md"}
+        >
+            <Text sx={(theme) => ({ color: theme.colors.cyan[9] })} align="center" size={"xl"} weight={"600"}>Metode Pembayaran</Text>
+            <Radio.Group style={{ width: '100%' }} label="">
+                <Stack mt={30} align="center" style={{ width: '100%' }}>
+                    <Text>Pilih Metode Pembayaran</Text>
+                    <Card sx={{ width: '100%' }} withBorder shadow={"xl"}>
+                        <Group position="apart">
+                            <Text weight={"600"}>Kartu Kredit</Text>
+                            <Radio value="1" />
+                        </Group>
+                    </Card>
+                    <Card sx={{ width: '100%' }} withBorder shadow={"xl"}>
+                        <Group position="apart">
+                            <Text weight={"600"}>QRIS</Text>
+                            <Radio value="2" ></Radio>
+                        </Group>
+                    </Card>
+                    <Card sx={{ width: '100%' }} withBorder shadow={"xl"}>
+                        <Group position="apart">
+                            <Text weight={"600"}>OVO</Text>
+                            <Radio value="3" />
+                        </Group>
+                    </Card>
+                    <Card sx={{ width: '100%' }} withBorder shadow={"xl"}>
+                        <Group position="apart">
+                            <Text weight={"600"}>Bank</Text>
+                            <Radio value="4" />
+                        </Group>
+                    </Card>
+                </Stack>
+            </Radio.Group>
+            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '14%' }}>
+                <Box mx={20}>
+                    <Button fullWidth size="lg" radius={"xl"} sx={(theme) => ({ backgroundColor: theme.colors.cyan[9] })}
+                        onClick={() => setOpen(false)}
+                    >Pilih</Button>
+                </Box>
+            </div>
+
+            <div style={{ position: 'absolute', left: 20, top: 20 }}>
+                <ActionIcon sx={(theme) => ({ backgroundColor: theme.colors.gray[0], color: theme.colors.cyan[9] })} variant="filled" radius={"xl"} size={"lg"}
+                    onClick={() => setOpen(false)}
+                >
+                    <ChevronLeft size={"50"} />
+                </ActionIcon>
+            </div>
+        </Drawer>
+    )
+}
+
 const SewaDrawer = ({ open, setOpen }) => {
     const navigate = useNavigate()
+    const [pembayaranDrawer, setPembayaranDrawer] = useState(true)
 
     return (
         <Drawer
@@ -20,14 +80,14 @@ const SewaDrawer = ({ open, setOpen }) => {
             withCloseButton={false}
             onClose={() => setOpen(false)}
             size="full"
-            padding={10}
+            padding={"md"}
             styles={(theme) => ({
                 drawer: {
                     backgroundColor: theme.colors.cyan[9]
-
                 }
             })}
         >
+            <PembayaranDrawer open={pembayaranDrawer} setOpen={setPembayaranDrawer} />
             <Text sx={(theme) => ({ color: '#FEF6E3' })} align="center" size={"xl"} weight={"600"}>Sewa</Text>
             <Box mt={20} sx={(theme) => ({ backgroundColor: theme.colors.yellow[0], borderTopLeftRadius: 50, borderTopRightRadius: 50, height: '100%' })}>
                 <Text size={"xl"} weight={"500"} py={10} sx={(theme) => ({ color: theme.colors.cyan[9] })} align="center">Pembayaran</Text>
@@ -87,7 +147,7 @@ const SewaDrawer = ({ open, setOpen }) => {
                         <Grid.Col span={12}>
                             <Group position="apart">
                                 <Text weight={"500"} size={"sm"}>Metode Pembayaran</Text>
-                                <Group align={"center"}>
+                                <Group align={"center"} onClick={() => setPembayaranDrawer(true)}>
                                     <Text sx={(theme) => ({ color: theme.colors.cyan[9] })} size={"md"} weight={"600"} >OVO </Text><ChevronRight />
                                 </Group>
                             </Group>

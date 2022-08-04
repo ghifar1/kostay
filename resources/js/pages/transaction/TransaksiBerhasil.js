@@ -1,6 +1,6 @@
-import { Box, Button, Center, Group, Stack, Text } from "@mantine/core"
+import { ActionIcon, Box, Button, Center, Group, Stack, Text } from "@mantine/core"
 import { useNavigate } from "react-router-dom"
-import { Check, CircleCheck } from "tabler-icons-react"
+import { Check, CircleCheck, Door } from "tabler-icons-react"
 
 const TransaksiBerhasil = () => {
     const navigate = useNavigate();
@@ -15,7 +15,7 @@ const TransaksiBerhasil = () => {
             <Box sx={(theme) => ({ position: 'absolute', bottom: '5%', width: '100%' })}>
                 <Box mx={20}>
                     <Group position="apart">
-                        <Button radius={"xl"} sx={(theme) => ({ backgroundColor: theme.colors.cyan[0], color: theme.colors.cyan[9], })} >Selesai</Button>
+                        <ActionIcon onClick={() => navigate('/u/mykost')} sx={(theme) => ({color: theme.white})} size={"xl"}><Door size={70}/></ActionIcon>
                         <Button radius={"xl"} sx={(theme) => ({ backgroundColor: theme.colors.cyan[0], color: theme.colors.cyan[9], })}
                             onClick={() => navigate('/u/home')}
                         >Selesai</Button>

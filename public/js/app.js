@@ -6696,6 +6696,54 @@ const Center = (0,_mantine_utils__WEBPACK_IMPORTED_MODULE_4__.createPolymorphicC
 
 /***/ }),
 
+/***/ "./node_modules/@mantine/core/esm/Checkbox/CheckboxGroup/InputsGroup.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@mantine/core/esm/Checkbox/CheckboxGroup/InputsGroup.js ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "InputsGroup": () => (/* binding */ InputsGroup)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Group_Group_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Group/Group.js */ "./node_modules/@mantine/core/esm/Group/Group.js");
+/* harmony import */ var _Stack_Stack_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Stack/Stack.js */ "./node_modules/@mantine/core/esm/Stack/Stack.js");
+
+
+
+
+function InputsGroup({
+  spacing,
+  offset,
+  orientation,
+  children,
+  role,
+  unstyled
+}) {
+  if (orientation === "horizontal") {
+    return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Group_Group_js__WEBPACK_IMPORTED_MODULE_1__.Group, {
+      pt: offset,
+      spacing,
+      role,
+      unstyled
+    }, children);
+  }
+  return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Stack_Stack_js__WEBPACK_IMPORTED_MODULE_2__.Stack, {
+    pt: offset,
+    spacing,
+    role,
+    unstyled
+  }, children);
+}
+
+
+//# sourceMappingURL=InputsGroup.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/@mantine/core/esm/Checkbox/CheckboxIcon.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/@mantine/core/esm/Checkbox/CheckboxIcon.js ***!
@@ -11722,6 +11770,471 @@ Portal.displayName = "@mantine/core/Portal";
 
 
 //# sourceMappingURL=Portal.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@mantine/core/esm/Radio/Radio.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@mantine/core/esm/Radio/Radio.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Radio": () => (/* binding */ Radio)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _mantine_hooks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mantine/hooks */ "./node_modules/@mantine/hooks/esm/use-id/use-id.js");
+/* harmony import */ var _mantine_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mantine/styles */ "./node_modules/@mantine/styles/esm/theme/MantineProvider.js");
+/* harmony import */ var _mantine_styles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mantine/styles */ "./node_modules/@mantine/styles/esm/theme/utils/extract-system-styles/extract-system-styles.js");
+/* harmony import */ var _RadioIcon_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RadioIcon.js */ "./node_modules/@mantine/core/esm/Radio/RadioIcon.js");
+/* harmony import */ var _RadioGroup_context_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./RadioGroup.context.js */ "./node_modules/@mantine/core/esm/Radio/RadioGroup.context.js");
+/* harmony import */ var _RadioGroup_RadioGroup_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./RadioGroup/RadioGroup.js */ "./node_modules/@mantine/core/esm/Radio/RadioGroup/RadioGroup.js");
+/* harmony import */ var _Radio_styles_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Radio.styles.js */ "./node_modules/@mantine/core/esm/Radio/Radio.styles.js");
+/* harmony import */ var _Box_Box_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Box/Box.js */ "./node_modules/@mantine/core/esm/Box/Box.js");
+
+
+
+
+
+
+
+
+
+var __defProp = Object.defineProperty;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const defaultProps = {
+  icon: _RadioIcon_js__WEBPACK_IMPORTED_MODULE_1__.RadioIcon,
+  transitionDuration: 100,
+  size: "sm"
+};
+const Radio = (0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)((props, ref) => {
+  const _a = (0,_mantine_styles__WEBPACK_IMPORTED_MODULE_2__.useComponentDefaultProps)("Radio", defaultProps, props), {
+    className,
+    style,
+    id,
+    label,
+    size,
+    title,
+    disabled,
+    color,
+    classNames,
+    styles,
+    sx,
+    icon: Icon,
+    transitionDuration,
+    wrapperProps,
+    unstyled
+  } = _a, others = __objRest(_a, [
+    "className",
+    "style",
+    "id",
+    "label",
+    "size",
+    "title",
+    "disabled",
+    "color",
+    "classNames",
+    "styles",
+    "sx",
+    "icon",
+    "transitionDuration",
+    "wrapperProps",
+    "unstyled"
+  ]);
+  const ctx = (0,_RadioGroup_context_js__WEBPACK_IMPORTED_MODULE_3__.useRadioGroupContext)();
+  const { classes, cx } = (0,_Radio_styles_js__WEBPACK_IMPORTED_MODULE_4__["default"])({ color, size: (ctx == null ? void 0 : ctx.size) || size, transitionDuration }, { classNames, styles, unstyled, name: "Radio" });
+  const { systemStyles, rest } = (0,_mantine_styles__WEBPACK_IMPORTED_MODULE_5__.extractSystemStyles)(others);
+  const uuid = (0,_mantine_hooks__WEBPACK_IMPORTED_MODULE_6__.useId)(id);
+  const contextProps = ctx ? {
+    checked: ctx.value === rest.value,
+    onChange: ctx.onChange
+  } : {};
+  return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Box_Box_js__WEBPACK_IMPORTED_MODULE_7__.Box, __spreadValues(__spreadValues({
+    className: cx(classes.radioWrapper, className),
+    style,
+    title,
+    sx
+  }, systemStyles), wrapperProps), /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: classes.inner
+  }, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", __spreadValues(__spreadValues({
+    ref,
+    className: classes.radio,
+    type: "radio",
+    id: uuid,
+    disabled
+  }, rest), contextProps)), /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(Icon, {
+    className: classes.icon,
+    "aria-hidden": true
+  })), label && /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("label", {
+    "data-disabled": disabled || void 0,
+    className: classes.label,
+    htmlFor: uuid
+  }, label));
+});
+Radio.displayName = "@mantine/core/Radio";
+Radio.Group = _RadioGroup_RadioGroup_js__WEBPACK_IMPORTED_MODULE_8__.RadioGroup;
+
+
+//# sourceMappingURL=Radio.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@mantine/core/esm/Radio/Radio.styles.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/@mantine/core/esm/Radio/Radio.styles.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _mantine_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mantine/styles */ "./node_modules/@mantine/styles/esm/tss/create-styles.js");
+
+
+var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+const sizes = {
+  xs: 16,
+  sm: 20,
+  md: 24,
+  lg: 30,
+  xl: 36
+};
+const iconSizes = {
+  xs: 6,
+  sm: 8,
+  md: 10,
+  lg: 14,
+  xl: 16
+};
+var useStyles = (0,_mantine_styles__WEBPACK_IMPORTED_MODULE_0__.createStyles)((theme, { size, color, transitionDuration }, getRef) => {
+  const colors = theme.fn.variant({ variant: "filled", color });
+  return {
+    radioWrapper: {
+      display: "flex",
+      alignItems: "center",
+      WebkitTapHighlightColor: "transparent"
+    },
+    inner: {
+      position: "relative"
+    },
+    icon: {
+      ref: getRef("icon"),
+      color: theme.white,
+      opacity: 0,
+      transform: "scale(0.75) translateY(2px)",
+      transition: `opacity ${transitionDuration}ms ${theme.transitionTimingFunction}`,
+      pointerEvents: "none",
+      width: theme.fn.size({ sizes: iconSizes, size }),
+      height: theme.fn.size({ sizes: iconSizes, size }),
+      position: "absolute",
+      top: `calc(50% - ${theme.fn.size({ sizes: iconSizes, size }) / 2}px)`,
+      left: `calc(50% - ${theme.fn.size({ sizes: iconSizes, size }) / 2}px)`
+    },
+    radio: __spreadProps(__spreadValues({}, theme.fn.focusStyles()), {
+      backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.white,
+      border: `1px solid ${theme.colorScheme === "dark" ? theme.colors.dark[4] : theme.colors.gray[4]}`,
+      position: "relative",
+      appearance: "none",
+      width: theme.fn.size({ sizes, size }),
+      height: theme.fn.size({ sizes, size }),
+      borderRadius: theme.fn.size({ sizes, size }),
+      margin: 0,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      transitionProperty: "background-color, border-color",
+      transitionTimingFunction: theme.transitionTimingFunction,
+      transitionDuration: `${transitionDuration}ms`,
+      cursor: theme.cursorType,
+      "&:checked": {
+        background: colors.background,
+        borderColor: colors.background,
+        [`& + .${getRef("icon")}`]: {
+          opacity: 1,
+          transform: "scale(1)"
+        }
+      },
+      "&:disabled": {
+        borderColor: theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[4],
+        backgroundColor: theme.colorScheme === "dark" ? theme.colors.dark[5] : theme.colors.gray[1],
+        [`& + .${getRef("icon")}`]: {
+          color: theme.colorScheme === "dark" ? theme.colors.dark[6] : theme.colors.gray[4]
+        }
+      }
+    }),
+    label: __spreadProps(__spreadValues({}, theme.fn.fontStyles()), {
+      display: "flex",
+      alignItems: "flex-start",
+      fontSize: theme.fontSizes[size] || theme.fontSizes.md,
+      lineHeight: `${theme.fn.size({ sizes, size })}px`,
+      color: theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.black,
+      paddingLeft: theme.spacing.sm,
+      cursor: theme.cursorType,
+      "&[data-disabled]": {
+        color: theme.colorScheme === "dark" ? theme.colors.dark[3] : theme.colors.gray[5]
+      }
+    })
+  };
+});
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useStyles);
+//# sourceMappingURL=Radio.styles.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@mantine/core/esm/Radio/RadioGroup.context.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@mantine/core/esm/Radio/RadioGroup.context.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RadioGroupProvider": () => (/* binding */ RadioGroupProvider),
+/* harmony export */   "useRadioGroupContext": () => (/* binding */ useRadioGroupContext)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+const RadioGroupContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+const RadioGroupProvider = RadioGroupContext.Provider;
+const useRadioGroupContext = () => (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(RadioGroupContext);
+
+
+//# sourceMappingURL=RadioGroup.context.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@mantine/core/esm/Radio/RadioGroup/RadioGroup.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@mantine/core/esm/Radio/RadioGroup/RadioGroup.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RadioGroup": () => (/* binding */ RadioGroup)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _mantine_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mantine/hooks */ "./node_modules/@mantine/hooks/esm/use-uncontrolled/use-uncontrolled.js");
+/* harmony import */ var _mantine_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mantine/styles */ "./node_modules/@mantine/styles/esm/theme/MantineProvider.js");
+/* harmony import */ var _Checkbox_CheckboxGroup_InputsGroup_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Checkbox/CheckboxGroup/InputsGroup.js */ "./node_modules/@mantine/core/esm/Checkbox/CheckboxGroup/InputsGroup.js");
+/* harmony import */ var _RadioGroup_context_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../RadioGroup.context.js */ "./node_modules/@mantine/core/esm/Radio/RadioGroup.context.js");
+/* harmony import */ var _Input_Input_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Input/Input.js */ "./node_modules/@mantine/core/esm/Input/Input.js");
+
+
+
+
+
+
+
+var __defProp = Object.defineProperty;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __objRest = (source, exclude) => {
+  var target = {};
+  for (var prop in source)
+    if (__hasOwnProp.call(source, prop) && exclude.indexOf(prop) < 0)
+      target[prop] = source[prop];
+  if (source != null && __getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(source)) {
+      if (exclude.indexOf(prop) < 0 && __propIsEnum.call(source, prop))
+        target[prop] = source[prop];
+    }
+  return target;
+};
+const defaultProps = {
+  orientation: "horizontal",
+  spacing: "lg",
+  offset: "xs",
+  size: "sm"
+};
+const RadioGroup = (0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)((props, ref) => {
+  const _a = (0,_mantine_styles__WEBPACK_IMPORTED_MODULE_1__.useComponentDefaultProps)("RadioGroup", defaultProps, props), {
+    children,
+    value,
+    defaultValue,
+    onChange,
+    orientation,
+    spacing,
+    size,
+    classNames,
+    styles,
+    wrapperProps,
+    errorProps,
+    labelProps,
+    descriptionProps,
+    inputContainer,
+    inputWrapperOrder,
+    unstyled,
+    offset
+  } = _a, others = __objRest(_a, [
+    "children",
+    "value",
+    "defaultValue",
+    "onChange",
+    "orientation",
+    "spacing",
+    "size",
+    "classNames",
+    "styles",
+    "wrapperProps",
+    "errorProps",
+    "labelProps",
+    "descriptionProps",
+    "inputContainer",
+    "inputWrapperOrder",
+    "unstyled",
+    "offset"
+  ]);
+  const [_value, setValue] = (0,_mantine_hooks__WEBPACK_IMPORTED_MODULE_2__.useUncontrolled)({
+    value,
+    defaultValue,
+    finalValue: "",
+    onChange
+  });
+  const handleChange = (event) => setValue(event.currentTarget.value);
+  return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(_RadioGroup_context_js__WEBPACK_IMPORTED_MODULE_3__.RadioGroupProvider, {
+    value: { value: _value, onChange: handleChange, size }
+  }, /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Input_Input_js__WEBPACK_IMPORTED_MODULE_4__.Input.Wrapper, __spreadValues(__spreadValues({
+    labelElement: "div",
+    size,
+    __staticSelector: "RadioGroup",
+    classNames,
+    styles,
+    ref,
+    errorProps,
+    descriptionProps,
+    labelProps,
+    inputContainer,
+    inputWrapperOrder,
+    unstyled
+  }, wrapperProps), others), /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Checkbox_CheckboxGroup_InputsGroup_js__WEBPACK_IMPORTED_MODULE_5__.InputsGroup, {
+    spacing,
+    orientation,
+    unstyled,
+    role: "radiogroup",
+    offset
+  }, children)));
+});
+RadioGroup.displayName = "@mantine/core/RadioGroup";
+
+
+//# sourceMappingURL=RadioGroup.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@mantine/core/esm/Radio/RadioIcon.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@mantine/core/esm/Radio/RadioIcon.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RadioIcon": () => (/* binding */ RadioIcon)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var __defProp = Object.defineProperty;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+function RadioIcon(props) {
+  return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", __spreadValues({
+    xmlns: "http://www.w3.org/2000/svg",
+    fill: "none",
+    viewBox: "0 0 5 5"
+  }, props), /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "currentColor",
+    d: "M0 2.5a2.5 2.5 0 115 0 2.5 2.5 0 01-5 0z"
+  }));
+}
+
+
+//# sourceMappingURL=RadioIcon.js.map
 
 
 /***/ }),
@@ -28324,17 +28837,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _pages_homeListing_DetailKost__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pages/homeListing/DetailKost */ "./resources/js/pages/homeListing/DetailKost.js");
 /* harmony import */ var _pages_homeListing_Home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/homeListing/Home */ "./resources/js/pages/homeListing/Home.js");
 /* harmony import */ var _pages_Login__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Login */ "./resources/js/pages/Login.js");
 /* harmony import */ var _pages_Register__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Register */ "./resources/js/pages/Register.js");
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/dom/motion.mjs");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/dom/motion.mjs");
 /* harmony import */ var _pages_transaction_TransaksiBerhasil__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/transaction/TransaksiBerhasil */ "./resources/js/pages/transaction/TransaksiBerhasil.js");
 /* harmony import */ var _pages_homeListing_ChatKost__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/homeListing/ChatKost */ "./resources/js/pages/homeListing/ChatKost.js");
 /* harmony import */ var _pages_listKost_KostSaya__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/listKost/KostSaya */ "./resources/js/pages/listKost/KostSaya.js");
 /* harmony import */ var _pages_listKost_KontrolKost__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/listKost/KontrolKost */ "./resources/js/pages/listKost/KontrolKost.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _pages_welcomeScreen_LogoScreen__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/welcomeScreen/LogoScreen */ "./resources/js/pages/welcomeScreen/LogoScreen.js");
+/* harmony import */ var _pages_welcomeScreen_AboutScreen__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./pages/welcomeScreen/AboutScreen */ "./resources/js/pages/welcomeScreen/AboutScreen.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 
 
@@ -28354,27 +28871,27 @@ var PageLayout = function PageLayout(_ref) {
 };
 
 var AuthRouter = function AuthRouter() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Routes, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
-      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(AnimationLayout, {}),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Routes, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(AnimationLayout, {}),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
         path: "/home",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_homeListing_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_homeListing_Home__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
         path: "/det/:id",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_homeListing_DetailKost__WEBPACK_IMPORTED_MODULE_0__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_homeListing_DetailKost__WEBPACK_IMPORTED_MODULE_0__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
         path: "/transaction/success",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_transaction_TransaksiBerhasil__WEBPACK_IMPORTED_MODULE_4__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_transaction_TransaksiBerhasil__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
         path: "/chat",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_homeListing_ChatKost__WEBPACK_IMPORTED_MODULE_5__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_homeListing_ChatKost__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
         path: "/mykost",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_listKost_KostSaya__WEBPACK_IMPORTED_MODULE_6__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_listKost_KostSaya__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
         path: "/mykost/control",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_listKost_KontrolKost__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_listKost_KontrolKost__WEBPACK_IMPORTED_MODULE_7__["default"], {})
       })]
     })
   });
@@ -28401,31 +28918,37 @@ var pageTransition = {
 };
 
 var AnimationLayout = function AnimationLayout() {
-  var _useLocation = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_9__.useLocation)(),
+  var _useLocation = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_11__.useLocation)(),
       pathname = _useLocation.pathname;
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(PageLayout, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_10__.motion.div, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(PageLayout, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(framer_motion__WEBPACK_IMPORTED_MODULE_12__.motion.div, {
       initial: "initial",
       animate: "in",
       variants: pageVariants,
       transition: pageTransition,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Outlet, {})
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Outlet, {})
     }, pathname)
   });
 };
 
 var NavigationRouter = function NavigationRouter() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Routes, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Routes, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+      path: "/",
+      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_welcomeScreen_LogoScreen__WEBPACK_IMPORTED_MODULE_8__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+      path: "/about",
+      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_welcomeScreen_AboutScreen__WEBPACK_IMPORTED_MODULE_9__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
       path: "/login",
-      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_Login__WEBPACK_IMPORTED_MODULE_2__["default"], {})
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_Login__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
       path: "/register",
-      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_pages_Register__WEBPACK_IMPORTED_MODULE_3__["default"], {})
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Route, {
+      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_pages_Register__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
       path: "/u/*",
-      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(AuthRouter, {})
+      element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(AuthRouter, {})
     })]
   });
 };
@@ -28847,33 +29370,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _mantine_carousel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mantine/carousel */ "./node_modules/@mantine/carousel/esm/index.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Drawer/Drawer.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Text/Text.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Box/Box.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Divider/Divider.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Stack/Stack.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Image/Image.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Group/Group.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Grid/Grid.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/ActionIcon/ActionIcon.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Select/Select.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/SegmentedControl/SegmentedControl.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Button/Button.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Skeleton/Skeleton.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Tabs/Tabs.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/ScrollArea/ScrollArea.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Center/Center.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/map-pin.js");
-/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/minus.js");
-/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/plus.js");
-/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/chevron-right.js");
-/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/chevron-left.js");
-/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/star.js");
-/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/man.js");
-/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/woman.js");
-/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/gender-bigender.js");
-/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/message.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Drawer/Drawer.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Text/Text.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Radio/Radio.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Stack/Stack.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Card/Card.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Group/Group.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Box/Box.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Button/Button.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/ActionIcon/ActionIcon.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Divider/Divider.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Image/Image.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Grid/Grid.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Select/Select.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/SegmentedControl/SegmentedControl.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Skeleton/Skeleton.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Tabs/Tabs.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/ScrollArea/ScrollArea.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Center/Center.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/chevron-left.js");
+/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/map-pin.js");
+/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/minus.js");
+/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/plus.js");
+/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/chevron-right.js");
+/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/star.js");
+/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/man.js");
+/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/woman.js");
+/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/gender-bigender.js");
+/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/message.js");
 /* harmony import */ var react_simple_star_rating__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-simple-star-rating */ "./node_modules/react-simple-star-rating/dist/index.js");
 /* harmony import */ var _images_kamar_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../images/kamar.png */ "./resources/js/images/kamar.png");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
@@ -28910,11 +29435,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var SewaDrawer = function SewaDrawer(_ref) {
+var PembayaranDrawer = function PembayaranDrawer(_ref) {
   var open = _ref.open,
       setOpen = _ref.setOpen;
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_9__.useNavigate)();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Drawer, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_9__.Drawer, {
     position: "bottom",
     opened: open,
     withCloseButton: false,
@@ -28922,7 +29446,163 @@ var SewaDrawer = function SewaDrawer(_ref) {
       return setOpen(false);
     },
     size: "full",
-    padding: 10,
+    padding: "md",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
+      sx: function sx(theme) {
+        return {
+          color: theme.colors.cyan[9]
+        };
+      },
+      align: "center",
+      size: "xl",
+      weight: "600",
+      children: "Metode Pembayaran"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Radio.Group, {
+      style: {
+        width: '100%'
+      },
+      label: "",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Stack, {
+        mt: 30,
+        align: "center",
+        style: {
+          width: '100%'
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
+          children: "Pilih Metode Pembayaran"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_13__.Card, {
+          sx: {
+            width: '100%'
+          },
+          withBorder: true,
+          shadow: "xl",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Group, {
+            position: "apart",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
+              weight: "600",
+              children: "Kartu Kredit"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Radio, {
+              value: "1"
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_13__.Card, {
+          sx: {
+            width: '100%'
+          },
+          withBorder: true,
+          shadow: "xl",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Group, {
+            position: "apart",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
+              weight: "600",
+              children: "QRIS"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Radio, {
+              value: "2"
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_13__.Card, {
+          sx: {
+            width: '100%'
+          },
+          withBorder: true,
+          shadow: "xl",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Group, {
+            position: "apart",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
+              weight: "600",
+              children: "OVO"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Radio, {
+              value: "3"
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_13__.Card, {
+          sx: {
+            width: '100%'
+          },
+          withBorder: true,
+          shadow: "xl",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Group, {
+            position: "apart",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
+              weight: "600",
+              children: "Bank"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Radio, {
+              value: "4"
+            })]
+          })
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      style: {
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: '14%'
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_15__.Box, {
+        mx: 20,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_16__.Button, {
+          fullWidth: true,
+          size: "lg",
+          radius: "xl",
+          sx: function sx(theme) {
+            return {
+              backgroundColor: theme.colors.cyan[9]
+            };
+          },
+          onClick: function onClick() {
+            return setOpen(false);
+          },
+          children: "Pilih"
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      style: {
+        position: 'absolute',
+        left: 20,
+        top: 20
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_17__.ActionIcon, {
+        sx: function sx(theme) {
+          return {
+            backgroundColor: theme.colors.gray[0],
+            color: theme.colors.cyan[9]
+          };
+        },
+        variant: "filled",
+        radius: "xl",
+        size: "lg",
+        onClick: function onClick() {
+          return setOpen(false);
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_18__["default"], {
+          size: "50"
+        })
+      })
+    })]
+  });
+};
+
+var SewaDrawer = function SewaDrawer(_ref2) {
+  var open = _ref2.open,
+      setOpen = _ref2.setOpen;
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_19__.useNavigate)();
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(true),
+      _useState2 = _slicedToArray(_useState, 2),
+      pembayaranDrawer = _useState2[0],
+      setPembayaranDrawer = _useState2[1];
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_9__.Drawer, {
+    position: "bottom",
+    opened: open,
+    withCloseButton: false,
+    onClose: function onClose() {
+      return setOpen(false);
+    },
+    size: "full",
+    padding: "md",
     styles: function styles(theme) {
       return {
         drawer: {
@@ -28930,7 +29610,10 @@ var SewaDrawer = function SewaDrawer(_ref) {
         }
       };
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(PembayaranDrawer, {
+      open: pembayaranDrawer,
+      setOpen: setPembayaranDrawer
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
       sx: function sx(theme) {
         return {
           color: '#FEF6E3'
@@ -28940,7 +29623,7 @@ var SewaDrawer = function SewaDrawer(_ref) {
       size: "xl",
       weight: "600",
       children: "Sewa"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Box, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_15__.Box, {
       mt: 20,
       sx: function sx(theme) {
         return {
@@ -28950,7 +29633,7 @@ var SewaDrawer = function SewaDrawer(_ref) {
           height: '100%'
         };
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
         size: "xl",
         weight: "500",
         py: 10,
@@ -28961,7 +29644,7 @@ var SewaDrawer = function SewaDrawer(_ref) {
         },
         align: "center",
         children: "Pembayaran"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_13__.Divider, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Stack, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_20__.Divider, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Stack, {
         sx: function sx(theme) {
           return {
             color: theme.colors.cyan[9]
@@ -28970,22 +29653,22 @@ var SewaDrawer = function SewaDrawer(_ref) {
         align: "center",
         justify: "center",
         my: 10,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_15__.Image, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_21__.Image, {
           src: _images_kamar_png__WEBPACK_IMPORTED_MODULE_2__["default"],
           radius: "lg",
           width: 170
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Stack, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Stack, {
           spacing: 1,
           align: "center",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
             size: "xl",
             weight: "500",
             children: "Kost Mang Udin"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_16__.Group, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Group, {
             spacing: 2,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_17__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_22__["default"], {
               color: "#0B7285"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
               sx: function sx(theme) {
                 return {
                   color: theme.colors.cyan[9]
@@ -28996,10 +29679,10 @@ var SewaDrawer = function SewaDrawer(_ref) {
             })]
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Box, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_15__.Box, {
         mx: 20,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_18__.Grid, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_18__.Grid.Col, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_23__.Grid, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_23__.Grid.Col, {
             span: 6,
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_dates__WEBPACK_IMPORTED_MODULE_4__.DatePicker, {
               label: "Mulai sewa",
@@ -29007,9 +29690,9 @@ var SewaDrawer = function SewaDrawer(_ref) {
               radius: "xl",
               placeholder: "Pilih tanggal"
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_18__.Grid.Col, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_23__.Grid.Col, {
             span: 6,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Stack, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Stack, {
               spacing: 2,
               sx: {
                 width: '100%',
@@ -29017,23 +29700,23 @@ var SewaDrawer = function SewaDrawer(_ref) {
               },
               justify: "center",
               align: "center",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
                 weight: "500",
                 size: "sm",
                 children: "Masa Sewa"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_16__.Group, {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_19__.ActionIcon, {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_20__["default"], {})
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Group, {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_17__.ActionIcon, {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_24__["default"], {})
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
                   children: "1"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_19__.ActionIcon, {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_21__["default"], {})
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_17__.ActionIcon, {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_25__["default"], {})
                 })]
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_18__.Grid.Col, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_23__.Grid.Col, {
             span: 6,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_22__.Select, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_26__.Select, {
               label: "Siklus pembayaran",
               placeholder: "bulanan",
               data: [{
@@ -29054,17 +29737,17 @@ var SewaDrawer = function SewaDrawer(_ref) {
               }],
               radius: "xl"
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_18__.Grid.Col, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_23__.Grid.Col, {
             span: 6,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Stack, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Stack, {
               spacing: 2,
               align: "center",
               justify: "center",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
                 weight: "500",
                 size: "sm",
                 children: "Pembayaran"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_23__.SegmentedControl, {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_27__.SegmentedControl, {
                 radius: "lg",
                 color: "cyan",
                 data: [{
@@ -29076,17 +29759,20 @@ var SewaDrawer = function SewaDrawer(_ref) {
                 }]
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_18__.Grid.Col, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_23__.Grid.Col, {
             span: 12,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_16__.Group, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Group, {
               position: "apart",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
                 weight: "500",
                 size: "sm",
                 children: "Metode Pembayaran"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_16__.Group, {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Group, {
                 align: "center",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+                onClick: function onClick() {
+                  return setPembayaranDrawer(true);
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
                   sx: function sx(theme) {
                     return {
                       color: theme.colors.cyan[9]
@@ -29095,17 +29781,17 @@ var SewaDrawer = function SewaDrawer(_ref) {
                   size: "md",
                   weight: "600",
                   children: "OVO "
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_24__["default"], {})]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_28__["default"], {})]
               })]
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_18__.Grid.Col, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_23__.Grid.Col, {
             span: 12,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_16__.Group, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Group, {
               position: "apart",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
                 weight: "500",
                 children: "Total"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
                 sx: function sx(theme) {
                   return {
                     color: theme.colors.cyan[9]
@@ -29117,24 +29803,24 @@ var SewaDrawer = function SewaDrawer(_ref) {
               })]
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_13__.Divider, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_20__.Divider, {
           size: "md",
           my: 15
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Stack, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Stack, {
           sx: function sx(theme) {
             return {
               color: theme.colors.cyan[9]
             };
           },
           spacing: 2,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
             size: "sm",
             children: "Saldo Anda"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_16__.Group, {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_15__.Image, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Group, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_21__.Image, {
               src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Logo_ovo_purple.svg/2560px-Logo_ovo_purple.svg.png",
               width: 30
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
               sx: function sx(theme) {
                 return {
                   color: theme.colors.cyan[9]
@@ -29145,7 +29831,7 @@ var SewaDrawer = function SewaDrawer(_ref) {
               children: "Rp. 1,500,000"
             })]
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_25__.Button, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_16__.Button, {
           fullWidth: true,
           size: "lg",
           radius: "xl",
@@ -29167,7 +29853,7 @@ var SewaDrawer = function SewaDrawer(_ref) {
         left: 20,
         top: 20
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_19__.ActionIcon, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_17__.ActionIcon, {
         sx: function sx(theme) {
           return {
             backgroundColor: theme.colors.gray[0],
@@ -29180,7 +29866,7 @@ var SewaDrawer = function SewaDrawer(_ref) {
         onClick: function onClick() {
           return setOpen(false);
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_26__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_18__["default"], {
           size: "50"
         })
       })
@@ -29191,14 +29877,14 @@ var SewaDrawer = function SewaDrawer(_ref) {
 var DetailKost = function DetailKost() {
   var _kost$feedback2;
 
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_9__.useNavigate)();
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_19__.useNavigate)();
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(true),
-      _useState2 = _slicedToArray(_useState, 2),
-      open = _useState2[0],
-      setOpen = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(true),
+      _useState4 = _slicedToArray(_useState3, 2),
+      open = _useState4[0],
+      setOpen = _useState4[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)({
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)({
     id: 0,
     name: '',
     position: '',
@@ -29213,21 +29899,21 @@ var DetailKost = function DetailKost() {
     gender: "",
     address: ""
   }),
-      _useState4 = _slicedToArray(_useState3, 2),
-      kost = _useState4[0],
-      setKos = _useState4[1];
-
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(0),
       _useState6 = _slicedToArray(_useState5, 2),
-      starSum = _useState6[0],
-      setStarSum = _useState6[1];
+      kost = _useState6[0],
+      setKos = _useState6[1];
 
   var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(0),
       _useState8 = _slicedToArray(_useState7, 2),
-      starCount = _useState8[0],
-      setStarCount = _useState8[1];
+      starSum = _useState8[0],
+      setStarSum = _useState8[1];
 
-  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_9__.useParams)(),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(0),
+      _useState10 = _slicedToArray(_useState9, 2),
+      starCount = _useState10[0],
+      setStarCount = _useState10[1];
+
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_19__.useParams)(),
       id = _useParams.id;
 
   (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(function () {
@@ -29259,7 +29945,7 @@ var DetailKost = function DetailKost() {
     maximumFractionDigits: 0 // (causes 2500.99 to be printed as $2,501)
 
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Box, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_15__.Box, {
     style: {
       position: 'relative',
       height: '100vh'
@@ -29267,7 +29953,7 @@ var DetailKost = function DetailKost() {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(SewaDrawer, {
       open: open,
       setOpen: setOpen
-    }), kost.photos.length == 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_27__.Skeleton, {
+    }), kost.photos.length == 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_29__.Skeleton, {
       height: '20%'
     }), kost.photos.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_carousel__WEBPACK_IMPORTED_MODULE_0__.Carousel, {
       slideSize: "75%",
@@ -29277,12 +29963,12 @@ var DetailKost = function DetailKost() {
       withControls: false,
       children: kost.photos.map(function (photo, key) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_carousel__WEBPACK_IMPORTED_MODULE_0__.Carousel.Slide, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_15__.Image, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_21__.Image, {
             src: "".concat(_static_api_url__WEBPACK_IMPORTED_MODULE_7__.base_url, "/images/").concat(photo === null || photo === void 0 ? void 0 : photo.image_name)
           })
         }, key);
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Box, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_15__.Box, {
       mx: 40,
       mt: 20,
       sx: function sx(theme) {
@@ -29290,20 +29976,20 @@ var DetailKost = function DetailKost() {
           color: theme.colors.cyan[9]
         };
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_16__.Group, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Group, {
         position: "apart",
         spacing: 0,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Stack, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Stack, {
           spacing: 2,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
             size: "xl",
             weight: "500",
             children: kost.name
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_16__.Group, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Group, {
             spacing: 2,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_17__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_22__["default"], {
               color: "#0B7285"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
               sx: function sx(theme) {
                 return {
                   color: theme.colors.cyan[9]
@@ -29311,38 +29997,38 @@ var DetailKost = function DetailKost() {
               },
               children: kost.position
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_16__.Group, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Group, {
             align: "center",
             spacing: 1,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_28__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_30__["default"], {
               color: "#0B7285",
               size: 18
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
               children: (starSum / starCount).toFixed(1)
             })]
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Stack, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Stack, {
           align: "end",
           spacing: 2,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Stack, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Stack, {
             spacing: 0,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Stack, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Stack, {
               align: "center",
-              children: [kost.gender == "man" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_29__["default"], {
+              children: [kost.gender == "man" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_31__["default"], {
                 color: "#0B7285",
                 size: 20
-              }), kost.gender == "woman" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_30__["default"], {
+              }), kost.gender == "woman" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_32__["default"], {
                 color: "#0B7285",
                 size: 20
-              }), kost.gender == "unisex" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_31__["default"], {
+              }), kost.gender == "unisex" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_33__["default"], {
                 color: "#0B7285",
                 size: 20
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
               align: "center",
               children: [kost.gender == "man" && "Putra", kost.gender == "woman" && "Putri", kost.gender == "unisex" && "Campur"]
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
             sx: function sx(theme) {
               return {
                 color: theme.colors.yellow[5]
@@ -29352,58 +30038,58 @@ var DetailKost = function DetailKost() {
             children: "Tersedia 3 kamar"
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_32__.Tabs, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_34__.Tabs, {
         color: "cyan",
         defaultValue: "detail",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_32__.Tabs.List, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_34__.Tabs.List, {
           grow: true,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_32__.Tabs.Tab, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_34__.Tabs.Tab, {
             value: "detail",
             children: "Detail"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_32__.Tabs.Tab, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_34__.Tabs.Tab, {
             value: "penilaian",
             children: "Penilaian"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_32__.Tabs.Panel, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_34__.Tabs.Panel, {
           value: "detail",
           pt: "xs",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_33__.ScrollArea, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_35__.ScrollArea, {
             style: {
               height: 300
             },
             type: "scroll",
             scrollbarSize: 8,
-            children: [kost.details == "" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Stack, {
+            children: [kost.details == "" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Stack, {
               spacing: 10,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_27__.Skeleton, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_29__.Skeleton, {
                 height: 12
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_27__.Skeleton, {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_29__.Skeleton, {
                 height: 12
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_27__.Skeleton, {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_29__.Skeleton, {
                 height: 12
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_27__.Skeleton, {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_29__.Skeleton, {
                 height: 12
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
               children: kost.details
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_32__.Tabs.Panel, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_34__.Tabs.Panel, {
           value: "penilaian",
           pt: "xs",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_33__.ScrollArea, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_35__.ScrollArea, {
             style: {
               height: 300
             },
             type: "scroll",
             scrollbarSize: 8,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Stack, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Stack, {
               children: kost.feedback.length > 0 && ((_kost$feedback2 = kost.feedback) === null || _kost$feedback2 === void 0 ? void 0 : _kost$feedback2.map(function (data, key) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Stack, {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Stack, {
                   spacing: 2,
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_16__.Group, {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Group, {
                     position: "apart",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
                       weight: "500",
                       children: data.name
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_simple_star_rating__WEBPACK_IMPORTED_MODULE_1__.Rating, {
@@ -29412,7 +30098,7 @@ var DetailKost = function DetailKost() {
                       initialValue: data.stars,
                       readonly: true
                     }, key)]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
                     children: data.feedback
                   })]
                 }, key);
@@ -29427,7 +30113,7 @@ var DetailKost = function DetailKost() {
         left: 20,
         top: 20
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_19__.ActionIcon, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_17__.ActionIcon, {
         sx: function sx(theme) {
           return {
             backgroundColor: theme.colors.gray[0],
@@ -29440,11 +30126,11 @@ var DetailKost = function DetailKost() {
         onClick: function onClick() {
           return navigate(-1);
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_26__["default"], {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_18__["default"], {
           size: "50"
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Box, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_15__.Box, {
       sx: function sx(theme) {
         return {
           position: 'absolute',
@@ -29457,12 +30143,12 @@ var DetailKost = function DetailKost() {
           borderTopRightRadius: 45
         };
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Box, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_15__.Box, {
         mx: 40,
         mt: 15,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Stack, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Stack, {
           align: "center",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_16__.Group, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Group, {
             spacing: 5,
             sx: function sx(theme) {
               return {
@@ -29472,22 +30158,22 @@ var DetailKost = function DetailKost() {
             },
             px: 20,
             py: 5,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_17__["default"], {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_22__["default"], {
               color: "#0B7285"
-            }), kost.address == "" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_27__.Skeleton, {
+            }), kost.address == "" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_29__.Skeleton, {
               height: 8,
               width: 150
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
               weight: "500",
               children: kost.address
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_16__.Group, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_14__.Group, {
           position: "apart",
           my: "md",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
             children: "Diupdate 20 hari yang lalu"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_19__.ActionIcon, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_17__.ActionIcon, {
             sx: function sx(theme) {
               return {
                 color: theme.colors.cyan[9]
@@ -29497,33 +30183,33 @@ var DetailKost = function DetailKost() {
             onClick: function onClick() {
               return navigate('/u/chat');
             },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_34__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_36__["default"], {
               size: "35"
             })
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_13__.Divider, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_20__.Divider, {
         size: "md"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Box, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_15__.Box, {
         mx: 40,
         mt: 20,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_18__.Grid, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_23__.Grid, {
           position: "apart",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_18__.Grid.Col, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_23__.Grid.Col, {
             span: 8,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_35__.Center, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_37__.Center, {
               sx: {
                 height: '100%'
               },
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Text, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Text, {
                 size: "lg",
                 weight: "600",
                 children: [formatter.format(kost.price), "/", kost.price_display]
               })
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_18__.Grid.Col, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_23__.Grid.Col, {
             span: 4,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_25__.Button, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_16__.Button, {
               onClick: function onClick() {
                 return setOpen(true);
               },
@@ -30433,9 +31119,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Stack/Stack.js");
 /* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Text/Text.js");
 /* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Group/Group.js");
-/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Button/Button.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/ActionIcon/ActionIcon.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Button/Button.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/circle-check.js");
+/* harmony import */ var tabler_icons_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! tabler-icons-react */ "./node_modules/tabler-icons-react/dist/icons/door.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -30480,16 +31168,20 @@ var TransaksiBerhasil = function TransaksiBerhasil() {
         mx: 20,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Group, {
           position: "apart",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_8__.Button, {
-            radius: "xl",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_8__.ActionIcon, {
+            onClick: function onClick() {
+              return navigate('/u/mykost');
+            },
             sx: function sx(theme) {
               return {
-                backgroundColor: theme.colors.cyan[0],
-                color: theme.colors.cyan[9]
+                color: theme.white
               };
             },
-            children: "Selesai"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_8__.Button, {
+            size: "xl",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(tabler_icons_react__WEBPACK_IMPORTED_MODULE_9__["default"], {
+              size: 70
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Button, {
             radius: "xl",
             sx: function sx(theme) {
               return {
@@ -30784,6 +31476,209 @@ var Profile = function Profile(_ref) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Profile);
+
+/***/ }),
+
+/***/ "./resources/js/pages/welcomeScreen/AboutScreen.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/pages/welcomeScreen/AboutScreen.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Center/Center.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Box/Box.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Stack/Stack.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Image/Image.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Text/Text.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Divider/Divider.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Grid/Grid.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Button/Button.js");
+/* harmony import */ var _images_logo_putih_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../images/logo-putih.png */ "./resources/js/images/logo-putih.png");
+/* harmony import */ var _images_about1_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../images/about1.png */ "./resources/js/images/about1.png");
+/* harmony import */ var _images_about2_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../images/about2.png */ "./resources/js/images/about2.png");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+var AboutScreen = function AboutScreen() {
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Center, {
+    sx: function sx(theme) {
+      return {
+        color: theme.white,
+        backgroundColor: theme.colors.cyan[9],
+        width: '100%',
+        height: '100vh'
+      };
+    },
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Box, {
+      mx: 20,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Stack, {
+        align: "center",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Box, {
+          mx: 100,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_8__.Image, {
+            src: _images_logo_putih_png__WEBPACK_IMPORTED_MODULE_0__["default"]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_9__.Text, {
+          align: "center",
+          children: "Kostay adalah aplikasi pesan dan bayar kos secara online"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Divider, {
+        my: 15
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid.Col, {
+          span: 6,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Center, {
+            sx: {
+              height: '100%'
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_9__.Text, {
+              align: "center",
+              children: "Cari kos sesuai kebutuhanmu dengan memakai fitur pencarian dan filter fasilitas"
+            })
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid.Col, {
+          span: 6,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_8__.Image, {
+            mx: 15,
+            src: _images_about1_png__WEBPACK_IMPORTED_MODULE_1__["default"]
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_10__.Divider, {
+        my: 15
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid.Col, {
+          span: 6,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_8__.Image, {
+            mx: 15,
+            src: _images_about2_png__WEBPACK_IMPORTED_MODULE_2__["default"]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_11__.Grid.Col, {
+          span: 6,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Center, {
+            sx: {
+              height: '100%'
+            },
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_9__.Text, {
+              align: "center",
+              children: "Kostay menyediakan alat-alat IoT untuk memudahkanmu dalam berkegiatan sehari-hari"
+            })
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_12__.Button, {
+        onClick: function onClick() {
+          return navigate('/login');
+        },
+        sx: function sx(theme) {
+          return {
+            color: theme.colors.cyan[9],
+            backgroundColor: theme.white
+          };
+        },
+        size: "lg",
+        mt: 100,
+        radius: "xl",
+        fullWidth: true,
+        children: "Get Started"
+      })]
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AboutScreen);
+
+/***/ }),
+
+/***/ "./resources/js/pages/welcomeScreen/LogoScreen.js":
+/*!********************************************************!*\
+  !*** ./resources/js/pages/welcomeScreen/LogoScreen.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Center/Center.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Box/Box.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Stack/Stack.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Image/Image.js");
+/* harmony import */ var _mantine_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mantine/core */ "./node_modules/@mantine/core/esm/Loader/Loader.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _images_logo_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../images/logo.png */ "./resources/js/images/logo.png");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+var LogoScreen = function LogoScreen() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      loading = _useState2[0],
+      setLoading = _useState2[1];
+
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useNavigate)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    setTimeout(function () {
+      setLoading(true);
+    }, 2000);
+    setTimeout(function () {
+      navigate('/about');
+    }, 3000);
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_4__.Center, {
+    sx: function sx(theme) {
+      return {
+        height: '100vh',
+        width: '100%',
+        backgroundColor: theme.colors.yellow[0]
+      };
+    },
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_5__.Box, {
+      sx: {
+        width: '100%'
+      },
+      mx: 70,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_mantine_core__WEBPACK_IMPORTED_MODULE_6__.Stack, {
+        align: "center",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_7__.Image, {
+          src: _images_logo_png__WEBPACK_IMPORTED_MODULE_1__["default"]
+        }), loading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mantine_core__WEBPACK_IMPORTED_MODULE_8__.Loader, {})]
+      })
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LogoScreen);
 
 /***/ }),
 
@@ -32429,6 +33324,36 @@ useEmblaCarousel.globalOptions = undefined;
 
 /***/ }),
 
+/***/ "./resources/js/images/about1.png":
+/*!****************************************!*\
+  !*** ./resources/js/images/about1.png ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/about1.png?12fcb87e5887fc7a2c83f7648271a4cf");
+
+/***/ }),
+
+/***/ "./resources/js/images/about2.png":
+/*!****************************************!*\
+  !*** ./resources/js/images/about2.png ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/about2.png?dccf190f7f899aac94ba3d675ff89c26");
+
+/***/ }),
+
 /***/ "./resources/js/images/kamar.png":
 /*!***************************************!*\
   !*** ./resources/js/images/kamar.png ***!
@@ -32444,6 +33369,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/images/logo-putih.png":
+/*!********************************************!*\
+  !*** ./resources/js/images/logo-putih.png ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/logo-putih.png?72b558e3c33c40aba7c3011bbd4bf696");
+
+/***/ }),
+
 /***/ "./resources/js/images/logo.png":
 /*!**************************************!*\
   !*** ./resources/js/images/logo.png ***!
@@ -32455,7 +33395,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/logo.png?e2ad359dcb037b6187dbccba9267275e");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/logo.png?78455470cf2baa13bf408249d7936cab");
 
 /***/ }),
 
