@@ -29589,7 +29589,7 @@ var SewaDrawer = function SewaDrawer(_ref2) {
       setOpen = _ref2.setOpen;
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_19__.useNavigate)();
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(true),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       pembayaranDrawer = _useState2[0],
       setPembayaranDrawer = _useState2[1];
@@ -29879,7 +29879,7 @@ var DetailKost = function DetailKost() {
 
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_19__.useNavigate)();
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(true),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(false),
       _useState4 = _slicedToArray(_useState3, 2),
       open = _useState4[0],
       setOpen = _useState4[1];

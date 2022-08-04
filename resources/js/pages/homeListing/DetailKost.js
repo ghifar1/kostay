@@ -71,7 +71,7 @@ const PembayaranDrawer = ({ open, setOpen }) => {
 
 const SewaDrawer = ({ open, setOpen }) => {
     const navigate = useNavigate()
-    const [pembayaranDrawer, setPembayaranDrawer] = useState(true)
+    const [pembayaranDrawer, setPembayaranDrawer] = useState(false)
 
     return (
         <Drawer
@@ -186,7 +186,7 @@ const SewaDrawer = ({ open, setOpen }) => {
 
 const DetailKost = () => {
     const navigate = useNavigate()
-    const [open, setOpen] = useState(true)
+    const [open, setOpen] = useState(false)
     const [kost, setKos] = useState({
         id: 0,
         name: '',
