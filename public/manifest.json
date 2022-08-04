@@ -1,6 +1,6 @@
 {
-    "name": "React PWA from scratch",
-    "short_name": "React PWA",
+    "name": "Aplikasi Kosan Masa Kini",
+    "short_name": "Kostay",
     "icons": [
         {
             "src": "/images/logo.png",
@@ -18,7 +18,7 @@
             "type": "image/png"
         }
     ],
-    "start_url": "./u/home",
+    "start_url": "./",
     "display": "standalone",
     "theme_color": "#000000",
     "background_color": "#ffffff"
