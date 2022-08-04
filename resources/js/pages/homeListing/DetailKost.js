@@ -1,7 +1,7 @@
 import { Carousel } from "@mantine/carousel"
 import { ActionIcon, Box, Button, Center, Divider, Drawer, Grid, Group, Image, ScrollArea, SegmentedControl, Select, Skeleton, Stack, Tabs, Text, TextInput } from "@mantine/core"
 import { useNavigate, useParams } from "react-router-dom"
-import { ChevronLeft, MapPin, Man, Star, Message, Minus, Plus, Woman, GenderBigender } from "tabler-icons-react"
+import { ChevronLeft, MapPin, Man, Star, Message, Minus, Plus, Woman, GenderBigender, ChevronRight } from "tabler-icons-react"
 import { Rating } from 'react-simple-star-rating'
 import kamar from "../../images/kamar.png"
 import { useEffect, useState } from "react"
@@ -17,8 +17,10 @@ const SewaDrawer = ({ open, setOpen }) => {
         <Drawer
             position="bottom"
             opened={open}
+            withCloseButton={false}
             onClose={() => setOpen(false)}
             size="full"
+            padding={10}
             styles={(theme) => ({
                 drawer: {
                     backgroundColor: theme.colors.cyan[9]
@@ -84,6 +86,14 @@ const SewaDrawer = ({ open, setOpen }) => {
                         </Grid.Col>
                         <Grid.Col span={12}>
                             <Group position="apart">
+                                <Text weight={"500"} size={"sm"}>Metode Pembayaran</Text>
+                                <Group align={"center"}>
+                                    <Text sx={(theme) => ({ color: theme.colors.cyan[9] })} size={"md"} weight={"600"} >OVO </Text><ChevronRight />
+                                </Group>
+                            </Group>
+                        </Grid.Col>
+                        <Grid.Col span={12}>
+                            <Group position="apart">
                                 <Text weight={"500"}>Total</Text>
                                 <Text sx={(theme) => ({ color: theme.colors.cyan[9] })} size={"xl"} weight={"600"} >Rp. 1,500,000</Text>
                             </Group>
@@ -103,13 +113,20 @@ const SewaDrawer = ({ open, setOpen }) => {
                 </Box>
             </Box>
 
+            <div style={{ position: 'absolute', left: 20, top: 20 }}>
+                <ActionIcon sx={(theme) => ({ backgroundColor: theme.colors.gray[0], color: theme.colors.cyan[9] })} variant="filled" radius={"xl"} size={"lg"}
+                    onClick={() => setOpen(false)}
+                >
+                    <ChevronLeft size={"50"} />
+                </ActionIcon>
+            </div>
         </Drawer>
     )
 }
 
 const DetailKost = () => {
     const navigate = useNavigate()
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(true)
     const [kost, setKos] = useState({
         id: 0,
         name: '',
@@ -279,7 +296,7 @@ const DetailKost = () => {
                 <Box mx={40} mt={20}>
                     <Grid position="apart">
                         <Grid.Col span={8}>
-                            <Center sx={{height: '100%'}}>
+                            <Center sx={{ height: '100%' }}>
                                 <Text size={"lg"} weight={"600"}>{formatter.format(kost.price)}/{kost.price_display}</Text>
                             </Center>
                         </Grid.Col>

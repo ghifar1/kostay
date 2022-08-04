@@ -13,8 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(KostSeed::class);
+        $this->call(KostSeed::class);
         $this->call(KostPhotoSeed::class);
+        $this->call(KostFeedbackSeed::class);
         // \App\Models\User::factory(10)->create();
     }
 }
